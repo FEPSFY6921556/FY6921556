@@ -10,7 +10,19 @@
     <hr> 
   <style>
   p.ex1 {
-    margin-left: 250px;
+    margin-left: 50px;
+    margin-right: 50px;
+    max-width: 900px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
   }
 </style>
   </head>
@@ -20,7 +32,7 @@
 <style>
   .mySlides {display:none;}
 </style>
-<body style="background-color:#FFFFFF;margin-left:50px;">
+<body style="background-color:#FFFFFF;margin-left:20px;margin-right:20px;">
   
   
   <!-- table of contents -->
@@ -44,27 +56,19 @@
   
   <hr>
   <h3 id="Abstract">Abstract</h3>
-  <p/>
-    <p class="ex1">
-<pre>
+  <p class="ex1">
 Winglets are vertical extensions fitted at aircraft wingtips designed to reduce induced drag and improve fuel efficiency. This paper examines how winglets work, their historical development from early patents through Richard Whitcomb's NASA research in the 1970s, and their widespread adoption on modern commercial and military aircraft. Real-world data shows winglet retrofits deliver 3.2% fuel savings on Boeing 737-800s, translating to approximately 110,000 gallons saved per aircraft annually with payback periods of 18–24 months. Beyond fuel economy, winglets provide secondary benefits including extended range, increased payload capacity, improved takeoff performance, and reduced noise. Implementation challenges include structural modifications, flutter and fatigue considerations, and varying suitability across aircraft types. Analysis of commercial adoption and Air Force assessments demonstrates that winglets represent a cost-effective, practical solution for reducing fuel consumption across aviation fleets. Despite implementation complexities, the technology proves that careful engineering can deliver significant operational and economic benefits at modest capital investment, making winglets essential to modern aircraft efficiency strategies.
-</pre>
-</p>
+  </p>
   <hr>
   <h3 id="Introduction">Introduction</h3>
-  <p id="Introduction_InText"/>
-    <p class="ex1">
-<pre>
+  <p class="ex1" id="Introduction_InText">
 Aircraft operators have been looking for ways to cut fuel costs for years now, and winglets have emerged as one of the most practical solutions (National Research Council, 2007, p. 12). The U.S. Air Force alone uses over 3 billion gallons of aviation fuel annually, so even small efficiency gains make a real difference to their budget and operations.
 
 The basic idea is straightforward: winglets reduce induced drag, which is the drag caused by the way air moves off the wingtips when the wing creates lift. Understanding how this works, where the technology came from, and whether it's worth the money to retrofit existing aircraft are the main questions this paper addresses.
-</pre>
-</p>
+  </p>
   <hr>
-<h3 id="Analysis">Analysis and Discussion</h3>
-  <p id="Analysis_InText"/>
-    <p class="ex1">
-<pre>
+  <h3 id="Analysis">Analysis and Discussion</h3>
+  <p class="ex1" id="Analysis_InText">
 <b>How Winglets Work and Why They Matter</b>
 
 The main source of drag on aircraft wings comes from creating lift. When a wing generates lift, air gets pushed downward, leaving a wake of disturbed air behind it. At the wingtips, high-pressure air from underneath the wing spills around to the low-pressure area on top, creating two large rotating vortices that trail behind the aircraft (National Research Council, 2007, p. 20). These vortices represent wasted energy, and the drag they cause – called induced drag – typically makes up about 40% of the total drag when cruising (National Research Council, 2007, pp. 21–22). During takeoff it's even worse, accounting for up to 80–90% of climb drag.
@@ -100,33 +104,31 @@ Not every aircraft is a good candidate. Older designs like the DC-9 have less ro
 The importance of winglets boils down to three things: they work, they're affordable, and they matter at scale. A 3–4% fuel saving across a fleet of hundreds of aircraft adds up to millions of pounds saved annually and significant reductions in carbon emissions. They require far less investment than buying new aircraft, and the payback period is short enough that the business case is compelling for most operators (Simple Flying, 2023).
 
 The technology also proves that sometimes the best solutions to technical problems come from understanding the physics properly, as Whitcomb demonstrated. There's no magic – just careful engineering.
-</pre>
-</p>
+  </p>
   <hr>
-<h3 id="References">References</h3>
-  <p/>
-    <p class="ex1">
-<pre>
+  <h3 id="References">References</h3>
+  <p class="ex1">
 Aviation Week & Space Technology (2024) 'Winglets evolve to boost efficiency across aircraft spectrum'. Available at: https://aviationweek.com (Accessed: 18 November 2025).
 
 National Research Council (2007) <i>Assessment of Wingtip Modifications to Increase the Fuel Efficiency of Air Force Aircraft</i>. Washington, DC: The National Academies Press.
 
 Simple Flying (2023) 'What are the different kinds of winglets?'. Available at: https://simpleflying.com (Accessed: 18 November 2025).
-</pre>
-</p>   
+  </p>   
 
 <!-- style for tables -->
 <style>
   table {
     font-family: Courier New, monospace;
     border-collapse: collapse;
-    width: 30%;
+    width: 90%;
+    max-width: 900px;
   }
 
   td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    word-wrap: break-word;
   }
 
   tr:nth-child(even) {
@@ -138,9 +140,9 @@ Simple Flying (2023) 'What are the different kinds of winglets?'. Available at: 
   <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
     <!-- Last commit time display -->
-<div id="last-updated">Loading last update time...</div>
+<div id="last-updated" style="margin-left: 50px; margin-right: 50px;">Loading last update time...</div>
 <!-- Verify Button -->
-<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 20px auto; padding: 8px 16px;">
     Verify Last Modified Time
 </button>
 <script>
@@ -180,7 +182,7 @@ Simple Flying (2023) 'What are the different kinds of winglets?'. Available at: 
         alert("Last modified time has been successfully verified from GitHub API.");
     }
     // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
+    window.addEventListener('load', getLastUpdatedTime);
 </script>
 
 
@@ -188,33 +190,42 @@ Simple Flying (2023) 'What are the different kinds of winglets?'. Available at: 
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
 <!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
+<p id="totalWordCount" style="margin-left: 50px; font-weight: bold; font-size: 16px;"></p>
 <hr>
 <script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
+  // Function to calculate word count for a specified section
+  function displayWordCount(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (!element) {
+      console.error("Element not found: " + sectionId);
+      return 0;
+    }
     // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
+    const text = element.textContent;
     // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
+    const wordArray = text.trim().split(/\s+/).filter(word => word.length > 0);
     // Count the words
     const wordCount = wordArray.length;
-    // Return the word count for summing purposes
     return wordCount;
   }
-  // Function to calculate and display total word count from selected sections
+  
+  // Function to calculate and display total word count from all main sections
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const AbstractCount = displayWordCount("Abstract") || 0;
+    const IntroductionCount = displayWordCount("Introduction_InText") || 0;
+    const AnalysisCount = displayWordCount("Analysis_InText") || 0;
+    
+    // Calculate the sum of all sections
+    const totalWordCount = AbstractCount + IntroductionCount + AnalysisCount;
+    
     // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+    document.getElementById("totalWordCount").innerText = `Total word count (Abstract + Introduction + Analysis and Discussion): ${totalWordCount} words`;
   }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
+  
+  // Run the function when the page loads
+  window.addEventListener('load', displayTotalWordCount);
 </script>
 
 </body>
-</html>
+</html
