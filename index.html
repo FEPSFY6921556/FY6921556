@@ -235,68 +235,52 @@ Dunn, G. (2024) 'Winglets evolve to boost efficiency across aircraft spectrum', 
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Adding last GitHub update ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- Last GitHub commit time display -->
-<div id="last-updated" style="margin-left: 50px; font-weight: bold; margin-top: 20px;">
-  Last GitHub Commit Time: Loading...
-</div>
+    <!-- Last commit time display -->
+<div id="last-updated">Loading last update time...</div>
 <!-- Verify Button -->
 <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
-    Verify Last GitHub Commit Time
+    Verify Last Modified Time
 </button>
 <script>
     async function getLastUpdatedTime() {
         const username = 'nr0025';
         const repo = 'FY0025';
-        const token = 'ghp_YOUR_TOKEN_HERE'; // 👈 REPLACE THIS WITH YOUR GITHUB TOKEN
+       
         const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-        
         try {
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `token ${token}`,
                     'Accept': 'application/vnd.github.v3+json',
-                    'X-GitHub-Api-Version': '2022-11-28'
                 }
             });
-            
             if (!response.ok) {
                 throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
             }
-            
             const commits = await response.json();
-            
             if (commits && commits.length > 0) {
-                // Fixed: Use author.date (not committer.date)
-                const lastCommitDate = new Date(commits[0].commit.author.date);
-                const formattedDate = lastCommitDate.toLocaleString('en-GB', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    timeZoneName: 'short'
-                });
-                document.getElementById('last-updated').innerText = `Last GitHub Commit Time: ${formattedDate}`;
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+               
+                // Displaying the time on load
+                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
             } else {
                 document.getElementById('last-updated').innerText = 'No commits found in the repository.';
             }
         } catch (error) {
             console.error('Error fetching the last updated time:', error);
-            document.getElementById('last-updated').innerText = 'Error fetching GitHub commit time. Check token and repository details.';
+            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
         }
     }
-    
+    // Function to verify the last update time by re-fetching it from the API
     async function verifyLastUpdatedTime() {
         document.getElementById('last-updated').innerText = 'Verifying...';
         await getLastUpdatedTime();
-        alert("Last GitHub commit time has been fetched from the GitHub API.");
+        alert("Last modified time has been successfully verified from GitHub API.");
     }
-    
-    // Auto-load on page load
-    window.addEventListener('load', getLastUpdatedTime);
+    // Initial load to display the time on page load
+    window.onload = getLastUpdatedTime;
 </script>
+
 
  <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
